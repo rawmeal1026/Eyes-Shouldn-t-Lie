@@ -1,0 +1,293 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/environments/Blue Nebula/Blue_Nebula_06-512x512.png" id="2_background"]
+
+[sub_resource type="StyleBoxFlat" id="StylePanel"]
+bg_color = Color(0.035, 0.055, 0.11, 0.94)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.24, 0.78, 0.92, 0.72)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleButtonNormal"]
+bg_color = Color(0.06, 0.15, 0.25, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.72, 0.9, 0.8)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleButtonHover"]
+bg_color = Color(0.08, 0.34, 0.5, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.47, 0.92, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.1, 0.75, 1, 0.28)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleButtonPressed"]
+bg_color = Color(0.04, 0.5, 0.62, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.68, 0.98, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleSettings"]
+bg_color = Color(0.025, 0.04, 0.09, 0.97)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.75, 0.9, 0.65)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleSlider"]
+bg_color = Color(0.1, 0.15, 0.23, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleSliderFill"]
+bg_color = Color(0.2, 0.78, 0.92, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_background")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="DarkOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.015, 0.025, 0.07, 0.58)
+
+[node name="MenuCenter" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuPanel" type="PanelContainer" parent="MenuCenter"]
+custom_minimum_size = Vector2(520, 390)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StylePanel")
+
+[node name="Margin" type="MarginContainer" parent="MenuCenter/MenuPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 52
+theme_override_constants/margin_top = 44
+theme_override_constants/margin_right = 52
+theme_override_constants/margin_bottom = 44
+
+[node name="Content" type="VBoxContainer" parent="MenuCenter/MenuPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Title" type="Label" parent="MenuCenter/MenuPanel/Margin/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.76, 0.97, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.55, 0.8, 0.8)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 38
+text = "EYES SHOULDN'T LIE"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="MenuCenter/MenuPanel/Margin/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.58, 0.72, 0.82, 1)
+theme_override_font_sizes/font_size = 16
+text = "Trust what you see. Question what you know."
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="MenuCenter/MenuPanel/Margin/Content"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MenuCenter/MenuPanel/Margin/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.86, 0.98, 1, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleButtonNormal")
+theme_override_styles/hover = SubResource("StyleButtonHover")
+theme_override_styles/pressed = SubResource("StyleButtonPressed")
+theme_override_styles/focus = SubResource("StyleButtonHover")
+text = "START GAME"
+
+[node name="Hint" type="Label" parent="MenuCenter/MenuPanel/Margin/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45, 0.62, 0.7, 1)
+theme_override_font_sizes/font_size = 13
+text = "Settings are available from the gear in the top-right corner."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="SettingsButton" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(58, 58)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -82.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 82.0
+grow_horizontal = 0
+tooltip_text = "Audio settings"
+theme_override_colors/font_color = Color(0.86, 0.98, 1, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleButtonNormal")
+theme_override_styles/hover = SubResource("StyleButtonHover")
+theme_override_styles/pressed = SubResource("StyleButtonPressed")
+theme_override_styles/focus = SubResource("StyleButtonHover")
+text = "⚙"
+
+[node name="SettingsPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -364.0
+offset_top = 96.0
+offset_right = -24.0
+offset_bottom = 354.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleSettings")
+
+[node name="Margin" type="MarginContainer" parent="SettingsPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="Settings" type="VBoxContainer" parent="SettingsPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="Heading" type="Label" parent="SettingsPanel/Margin/Settings"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.76, 0.97, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "AUDIO SETTINGS"
+
+[node name="SFXHeader" type="HBoxContainer" parent="SettingsPanel/Margin/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPanel/Margin/Settings/SFXHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
+text = "SFX Volume"
+
+[node name="SFXValue" type="Label" parent="SettingsPanel/Margin/Settings/SFXHeader"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.85, 0.95, 1)
+text = "80%"
+
+[node name="SFXSlider" type="HSlider" parent="SettingsPanel/Margin/Settings"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+max_value = 100.0
+step = 1.0
+value = 80.0
+theme_override_styles/slider = SubResource("StyleSlider")
+theme_override_styles/grabber_area = SubResource("StyleSliderFill")
+theme_override_styles/grabber_area_highlight = SubResource("StyleSliderFill")
+
+[node name="BGMHeader" type="HBoxContainer" parent="SettingsPanel/Margin/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPanel/Margin/Settings/BGMHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
+text = "BGM Volume"
+
+[node name="BGMValue" type="Label" parent="SettingsPanel/Margin/Settings/BGMHeader"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.85, 0.95, 1)
+text = "70%"
+
+[node name="BGMSlider" type="HSlider" parent="SettingsPanel/Margin/Settings"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+max_value = 100.0
+step = 1.0
+value = 70.0
+theme_override_styles/slider = SubResource("StyleSlider")
+theme_override_styles/grabber_area = SubResource("StyleSliderFill")
+theme_override_styles/grabber_area_highlight = SubResource("StyleSliderFill")
+
+[connection signal="pressed" from="MenuCenter/MenuPanel/Margin/Content/StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="value_changed" from="SettingsPanel/Margin/Settings/SFXSlider" to="." method="_on_sfx_volume_changed"]
+[connection signal="drag_ended" from="SettingsPanel/Margin/Settings/SFXSlider" to="." method="_on_volume_drag_ended"]
+[connection signal="value_changed" from="SettingsPanel/Margin/Settings/BGMSlider" to="." method="_on_bgm_volume_changed"]
+[connection signal="drag_ended" from="SettingsPanel/Margin/Settings/BGMSlider" to="." method="_on_volume_drag_ended"]
