@@ -3,14 +3,7 @@
 [ext_resource type="Script" uid="uid://v0nob1gnhx6g" path="res://scripts/ui/character_sprite.gd" id="2_j26j5"]
 [ext_resource type="FontFile" uid="uid://c2r26ftrqhcm4" path="res://assets/font/SuperIndie-GOp7O.ttf" id="2_lvfut"]
 [ext_resource type="Texture2D" uid="uid://qd0qkuw10o0k" path="res://assets/ui/FreeButtons.png" id="3_j26j5"]
-[ext_resource type="Script" uid="uid://d0qipkkxplg2o" path="res://scripts/ui/eye_1.gd" id="4_4u11i"]
 [ext_resource type="Script" uid="uid://cf5ckssryry1b" path="res://scripts/ui/sprite_manager.gd" id="4_j26j5"]
-[ext_resource type="Script" uid="uid://cu04xgcc3klrh" path="res://scripts/ui/eye_2.gd" id="5_b6fej"]
-[ext_resource type="Script" uid="uid://c4d1lvworucto" path="res://scripts/ui/eye_3.gd" id="6_qdjd6"]
-[ext_resource type="Script" uid="uid://bn3vegsriq7hx" path="res://scripts/ui/eye_4.gd" id="7_gaeyc"]
-[ext_resource type="Script" uid="uid://bgem34w03qigs" path="res://scripts/ui/previous.gd" id="8_7f38f"]
-[ext_resource type="Script" uid="uid://koaj4o0wnm6f" path="res://scripts/ui/next.gd" id="9_h8jem"]
-[ext_resource type="Script" uid="uid://dwwrmwraaxk2j" path="res://scripts/ui/paint.gd" id="10_qdjd6"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=744922142]
 
@@ -141,7 +134,6 @@ theme_override_fonts/font = ExtResource("2_lvfut")
 theme_override_font_sizes/font_size = 46
 text = ">"
 flat = true
-script = ExtResource("4_4u11i")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel/MarginContainer/HBoxContainer" unique_id=549744069]
 layout_mode = 2
@@ -168,7 +160,6 @@ theme_override_fonts/font = ExtResource("2_lvfut")
 theme_override_font_sizes/font_size = 46
 text = "T"
 flat = true
-script = ExtResource("5_b6fej")
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel/MarginContainer/HBoxContainer" unique_id=457182444]
 layout_mode = 2
@@ -195,7 +186,6 @@ theme_override_fonts/font = ExtResource("2_lvfut")
 theme_override_font_sizes/font_size = 46
 text = "\\"
 flat = true
-script = ExtResource("6_qdjd6")
 
 [node name="NinePatchRect4" type="NinePatchRect" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel/MarginContainer/HBoxContainer" unique_id=1161014833]
 layout_mode = 2
@@ -222,7 +212,6 @@ theme_override_fonts/font = ExtResource("2_lvfut")
 theme_override_font_sizes/font_size = 46
 text = "o"
 flat = true
-script = ExtResource("7_gaeyc")
 
 [node name="Panel2" type="Panel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" unique_id=822684862]
 layout_mode = 2
@@ -284,7 +273,6 @@ theme_override_fonts/font = ExtResource("2_lvfut")
 theme_override_font_sizes/font_size = 46
 text = "<"
 flat = true
-script = ExtResource("8_7f38f")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel2/MarginContainer/HBoxContainer" unique_id=1734647650]
 layout_mode = 2
@@ -334,7 +322,6 @@ theme_override_fonts/font = ExtResource("2_lvfut")
 theme_override_font_sizes/font_size = 46
 text = ">"
 flat = true
-script = ExtResource("9_h8jem")
 
 [node name="Panel3" type="Panel" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" unique_id=818229171]
 layout_mode = 2
@@ -392,7 +379,6 @@ theme_override_fonts/font = ExtResource("2_lvfut")
 theme_override_font_sizes/font_size = 46
 text = "PAINT"
 flat = true
-script = ExtResource("10_qdjd6")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=574746588]
 offset_right = 40.0
@@ -408,11 +394,3 @@ next_button = NodePath("../Control/MarginContainer/VBoxContainer/HBoxContainer/P
 previous_button = NodePath("../Control/MarginContainer/VBoxContainer/HBoxContainer/Panel2/MarginContainer/HBoxContainer/NinePatchRect4/Next")
 emotion_label = NodePath("../Control/MarginContainer/VBoxContainer/HBoxContainer/Panel2/MarginContainer/HBoxContainer/NinePatchRect2/Emotion")
 paint_button = NodePath("../Control/MarginContainer/VBoxContainer/HBoxContainer/Panel3/MarginContainer/NinePatchRect4/Paint")
-
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel/MarginContainer/HBoxContainer/NinePatchRect/Eye1" to="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel/MarginContainer/HBoxContainer/NinePatchRect/Eye1" method="_on_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel/MarginContainer/HBoxContainer/NinePatchRect2/Eye2" to="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel/MarginContainer/HBoxContainer/NinePatchRect2/Eye2" method="_on_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel/MarginContainer/HBoxContainer/NinePatchRect3/Eye3" to="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel/MarginContainer/HBoxContainer/NinePatchRect3/Eye3" method="_on_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel/MarginContainer/HBoxContainer/NinePatchRect4/Eye4" to="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel/MarginContainer/HBoxContainer/NinePatchRect4/Eye4" method="_on_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel2/MarginContainer/HBoxContainer/NinePatchRect/Previous" to="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel2/MarginContainer/HBoxContainer/NinePatchRect/Previous" method="_on_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel2/MarginContainer/HBoxContainer/NinePatchRect4/Next" to="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel2/MarginContainer/HBoxContainer/NinePatchRect4/Next" method="_on_pressed"]
-[connection signal="button_down" from="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel3/MarginContainer/NinePatchRect4/Paint" to="Control/MarginContainer/VBoxContainer/HBoxContainer/Panel3/MarginContainer/NinePatchRect4/Paint" method="_on_button_down"]
