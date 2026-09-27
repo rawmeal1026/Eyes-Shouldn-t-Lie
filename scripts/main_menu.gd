@@ -31,9 +31,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _on_start_pressed() -> void:
-	var error := get_tree().change_scene_to_file(GAME_SCENE)
-	if error != OK:
-		push_error("Could not open game scene: %s" % error_string(error))
+    # Give the click sound a brief moment to start before this scene is freed.
+    await get_tree().create_timer(0.08).timeout
+    var error := get_tree().change_scene_to_file(GAME_SCENE)
+    if error != OK:
+        push_error("Could not open game scene: %s" % error_string(error))
 
 
 func _on_settings_pressed() -> void:
